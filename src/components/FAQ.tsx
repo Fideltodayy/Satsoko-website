@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const faqs = [
   {
@@ -55,18 +56,19 @@ const FAQ = () => {
 
         <Accordion type="single" collapsible className="space-y-3">
           {faqs.map((faq, i) => (
-            <AccordionItem
-              key={i}
-              value={`item-${i}`}
-              className="bg-muted border-0 rounded-2xl px-6 data-[state=open]:bg-muted"
-            >
-              <AccordionTrigger className="font-semibold text-foreground text-sm text-left hover:no-underline py-5">
-                {faq.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-5">
-                {faq.a}
-              </AccordionContent>
-            </AccordionItem>
+            <ScrollReveal key={i} delay={i * 80}>
+              <AccordionItem
+                value={`item-${i}`}
+                className="bg-muted border-0 rounded-2xl px-6 data-[state=open]:bg-muted"
+              >
+                <AccordionTrigger className="font-semibold text-foreground text-sm text-left hover:no-underline py-5">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-5">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            </ScrollReveal>
           ))}
         </Accordion>
       </div>

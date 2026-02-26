@@ -1,4 +1,5 @@
 import { PiggyBank, Send, ShoppingBag, Repeat, Users, Zap } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const useCases = [
   {
@@ -57,9 +58,10 @@ const HowToUseBitcoin = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {useCases.map(({ Icon, title, description }) => (
-            <div
+          {useCases.map(({ Icon, title, description }, i) => (
+            <ScrollReveal
               key={title}
+              delay={i * 100}
               className="bg-muted rounded-3xl p-6 flex flex-col gap-3"
             >
               <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center">
@@ -71,7 +73,7 @@ const HowToUseBitcoin = () => {
                   {description}
                 </p>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

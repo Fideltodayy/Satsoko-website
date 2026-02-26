@@ -1,4 +1,4 @@
-import { Bitcoin, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -11,12 +11,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                <Bitcoin className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-white font-bold text-lg tracking-tight">
-                satsoko
-              </span>
+              <img
+                src="/icons/satsoko.png"
+                alt="Satsoko"
+                className="h-8 w-auto object-contain"
+              />
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
               Buy Bitcoin instantly with KES via M-Pesa. Straight to your

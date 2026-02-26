@@ -1,4 +1,4 @@
-import { Bitcoin, Zap, MessageCircle } from "lucide-react";
+import { Zap, MessageCircle } from "lucide-react";
 
 const PhoneMockup = () => {
   return (
@@ -62,10 +62,11 @@ const PhoneMockup = () => {
               <div className="px-5 pb-7 pt-3 space-y-3.5">
                 {/* Logo */}
                 <div className="flex items-center gap-1.5 justify-center">
-                  <div className="w-7 h-7 rounded-full bg-primary flex items-center justify-center">
-                    <Bitcoin className="w-4 h-4 text-primary-foreground" />
-                  </div>
-                  <span className="text-sm font-bold text-foreground tracking-tight">satsoko</span>
+                  <img
+                    src="/icons/satsoko.png"
+                    alt="Satsoko"
+                    className="h-7 w-auto object-contain"
+                  />
                 </div>
 
                 {/* Heading */}

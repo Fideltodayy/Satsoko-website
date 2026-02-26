@@ -49,22 +49,26 @@ const CTAButtons = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center">
-      <div className="relative" ref={ref}>
-        <button
-          onClick={() => setOpen(!open)}
-          className="inline-flex items-center gap-3 px-8 h-[56px] rounded-full font-bold text-base transition-all hover:opacity-90 active:scale-95"
-          style={{ background: "hsl(36 15% 16%)", color: "white" }}
-        >
-          Get the App
-          <ChevronDown
-            className={`w-4 h-4 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
-          />
-        </button>
+    <div className="flex flex-col items-center" ref={ref}>
+      <button
+        onClick={() => setOpen(!open)}
+        className="inline-flex items-center gap-3 px-8 h-[56px] rounded-full font-bold text-base transition-all hover:opacity-90 active:scale-95"
+        style={{ background: "hsl(36 15% 16%)", color: "white" }}
+      >
+        Get the App
+        <ChevronDown
+          className={`w-4 h-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
 
-        {open && (
+      {/* Flow-based dropdown — pushes content below when open */}
+      <div
+        className="grid transition-[grid-template-rows] duration-400 ease-out w-full"
+        style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+      >
+        <div className="overflow-hidden">
           <div
-            className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 rounded-3xl overflow-hidden shadow-2xl z-50"
+            className="mt-3 w-64 mx-auto rounded-3xl overflow-hidden shadow-2xl"
             style={{ background: "hsl(36 15% 14%)" }}
           >
             <div className="px-5 py-4 border-b border-white/10">
@@ -83,7 +87,7 @@ const CTAButtons = () => {
               </a>
             ))}
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

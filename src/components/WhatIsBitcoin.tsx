@@ -1,4 +1,5 @@
 import { Shield, Globe, Lock, TrendingUp } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const facts = [
   {
@@ -55,9 +56,10 @@ const WhatIsBitcoin = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {facts.map(({ Icon, label, sub }) => (
-            <div
+          {facts.map(({ Icon, label, sub }, i) => (
+            <ScrollReveal
               key={label}
+              delay={i * 100}
               className="bg-background rounded-3xl p-5 text-center flex flex-col items-center gap-3"
             >
               <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center">
@@ -67,7 +69,7 @@ const WhatIsBitcoin = () => {
                 <p className="font-bold text-foreground text-sm">{label}</p>
                 <p className="text-xs text-muted-foreground mt-0.5">{sub}</p>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const wallets = [
   {
@@ -6,32 +7,42 @@ const wallets = [
     type: "Custodial · Easiest",
     description:
       "Perfect for beginners. Create a wallet in 30 seconds with just a phone number. No technical setup needed.",
-    color: "#F7931A",
-    initial: "B",
+    icon: "/icons/blink.webp",
   },
   {
     name: "Phoenix",
     type: "Self-custodial · Recommended",
     description:
       "Hold your own keys. Seamless Lightning experience with automatic channel management and a beautiful UI.",
-    color: "#7B3FE4",
-    initial: "P",
+    icon: "/icons/phoenix.webp",
+  },
+  {
+    name: "Wallet of Satoshi",
+    type: "Custodial · Simple",
+    description:
+      "The world's simplest Lightning wallet. Send and receive Bitcoin instantly with zero configuration.",
+    icon: "/icons/wallet-of-satoshi.webp",
   },
   {
     name: "Breez",
     type: "Self-custodial",
     description:
       "Non-custodial Lightning wallet with a clean interface, built-in podcast player, and Point of Sale mode.",
-    color: "#00B87A",
-    initial: "B",
+    icon: "/icons/breez.webp",
+  },
+  {
+    name: "Machankura",
+    type: "Non-custodial · No internet needed",
+    description:
+      "Access Bitcoin via USSD — no smartphone or internet required. Built for Africa, works on any phone.",
+    icon: "/icons/machankura.svg",
   },
   {
     name: "Zeus",
     type: "Advanced · Self-custodial",
     description:
       "For power users who want full control, including the ability to connect their own Lightning node.",
-    color: "#3B82F6",
-    initial: "Z",
+    icon: "/icons/zeus.webp",
   },
 ];
 
@@ -52,19 +63,18 @@ const WalletRecommendations = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {wallets.map((wallet) => (
-            <a
-              key={wallet.name}
-              href="#"
-              className="group bg-muted rounded-3xl p-6 flex flex-col gap-3 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
-            >
-              <div
-                className="w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold text-lg"
-                style={{ backgroundColor: wallet.color }}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {wallets.map((wallet, i) => (
+            <ScrollReveal key={wallet.name} delay={i * 100}>
+              <a
+                href="#"
+                className="group bg-muted rounded-3xl p-6 flex flex-col gap-3 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
               >
-                {wallet.initial}
-              </div>
+              <img
+                src={wallet.icon}
+                alt={wallet.name}
+                className="w-12 h-12 rounded-2xl object-contain"
+              />
               <div>
                 <div className="flex items-center justify-between">
                   <h3 className="font-bold text-foreground">{wallet.name}</h3>
@@ -77,7 +87,8 @@ const WalletRecommendations = () => {
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {wallet.description}
               </p>
-            </a>
+              </a>
+            </ScrollReveal>
           ))}
         </div>
       </div>

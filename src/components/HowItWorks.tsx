@@ -1,4 +1,5 @@
 import { Banknote, Zap, Smartphone } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const steps = [
   {
@@ -41,9 +42,10 @@ const HowItWorks = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {steps.map(({ number, Icon, title, description }) => (
-            <div
+          {steps.map(({ number, Icon, title, description }, i) => (
+            <ScrollReveal
               key={number}
+              delay={i * 120}
               className="bg-background rounded-3xl p-7 flex flex-col gap-4"
             >
               <span className="text-6xl font-extrabold text-primary/15 leading-none select-none">
@@ -58,7 +60,7 @@ const HowItWorks = () => {
                   {description}
                 </p>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
