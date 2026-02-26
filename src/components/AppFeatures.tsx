@@ -247,7 +247,7 @@ const LightningInvoicesScreen = () => (
 
 const AppFeatures = () => {
   return (
-    <section className="bg-background py-20 md:py-28">
+    <section id="app-features" className="bg-background py-20 md:py-28">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-14">
           <span className="text-primary font-semibold text-sm uppercase tracking-widest">

@@ -79,7 +79,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="bg-muted py-20 md:py-28">
+    <section id="testimonials" className="bg-muted py-20 md:py-28">
       <div className="max-w-5xl mx-auto px-6">
         <div className="flex items-end justify-between mb-10">
           <div>
