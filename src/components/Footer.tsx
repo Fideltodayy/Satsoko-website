@@ -6,7 +6,7 @@ const Footer = () => {
       className="text-white/60"
       style={{ background: "hsl(36 15% 13%)" }}
     >
-      <div className="max-w-5xl mx-auto px-6 py-14">
+      <div className="max-w-6xl mx-auto px-6 xl:px-10 py-14">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
           {/* Brand */}
           <div className="md:col-span-2">
@@ -14,7 +14,7 @@ const Footer = () => {
               <img
                 src="/icons/satsoko.png"
                 alt="Satsoko"
-                className="h-8 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
@@ -90,7 +90,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/30">
-          <p>© 2025 Satsoko. All rights reserved.</p>
+          <p>© 2026 Satsoko. All rights reserved.</p>
           <p>Built with ⚡ in Nairobi, Kenya</p>
         </div>
       </div>

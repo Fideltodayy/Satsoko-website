@@ -28,12 +28,12 @@ const steps = [
 const HowItWorks = () => {
   return (
     <section id="how-it-works" className="bg-muted py-20 md:py-28">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-14">
           <span className="text-primary font-semibold text-sm uppercase tracking-widest">
             Simple Process
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mt-2">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-tight text-foreground mt-2">
             Buy Bitcoin in <span className="text-primary">3 steps</span>
           </h2>
           <p className="text-muted-foreground mt-3 max-w-md mx-auto">

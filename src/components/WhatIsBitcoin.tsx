@@ -27,12 +27,12 @@ const facts = [
 const WhatIsBitcoin = () => {
   return (
     <section id="what-is-bitcoin" className="bg-muted py-20 md:py-28">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <span className="text-primary font-semibold text-sm uppercase tracking-widest">
             Bitcoin 101
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mt-2">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-tight text-foreground mt-2">
             What is Bitcoin?
           </h2>
         </div>

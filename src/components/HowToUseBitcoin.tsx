@@ -43,12 +43,12 @@ const useCases = [
 const HowToUseBitcoin = () => {
   return (
     <section id="use-cases" className="bg-background py-20 md:py-28">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-14">
           <span className="text-primary font-semibold text-sm uppercase tracking-widest">
             Use Cases
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mt-2">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-tight text-foreground mt-2">
             How can I use my Bitcoin?
           </h2>
           <p className="text-muted-foreground mt-3 max-w-md mx-auto">

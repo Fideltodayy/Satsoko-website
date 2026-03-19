@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
     <!-- Primary -->
     <title>Satsoko — Buy Bitcoin Instantly with KES via M-Pesa</title>
     <meta name="description" content="Buy bitcoin instantly with Kenyan Shillings via M-Pesa. Sats are sent directly to your Lightning wallet in seconds — no sign-up, no KYC, no middleman." />
@@ -28,7 +33,7 @@
     <meta property="og:locale" content="en_KE" />
 
     <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@saborishq" />
     <meta name="twitter:title" content="Satsoko — Buy Bitcoin Instantly with KES via M-Pesa" />
     <meta name="twitter:description" content="Buy bitcoin instantly with Kenyan Shillings via M-Pesa. Sats land in your Lightning wallet in seconds — no sign-up required." />
@@ -43,7 +48,7 @@
     <meta name="geo.region" content="KE" />
     <meta name="geo.placename" content="Nairobi" />
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Structured Data: App -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -68,6 +73,56 @@
           "@type": "Country",
           "name": "Kenya"
         }
+      }
+    </script>
+
+    <!-- Structured Data: FAQ -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Satsoko?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Satsoko is a service that lets you buy Bitcoin (in satoshis) instantly using KES via M-Pesa. We connect your M-Pesa payment directly to your Lightning wallet — no exchange account or sign-up needed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to create an account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No account is needed. Just enter the amount, your Lightning address, and your M-Pesa number. That's it — no sign-up, no KYC for standard amounts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to receive my Bitcoin?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Usually under 2 minutes. Once you confirm the M-Pesa STK push, our system automatically sends your sats to the Lightning address you provided."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Satsoko safe to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We never hold your Bitcoin — sats are sent directly to your wallet immediately after your payment clears. You remain in full control of your funds at all times."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the minimum amount I can buy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The minimum purchase is KES 100. There's no strict upper limit, though very large orders may require additional verification."
+            }
+          }
+        ]
       }
     </script>
   </head>
