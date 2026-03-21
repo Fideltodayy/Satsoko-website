@@ -40,10 +40,10 @@ const Index = () => {
         <div className="relative max-w-6xl mx-auto px-6 pt-16 md:pt-24 pb-16 lg:pb-0 lg:min-h-[90vh] flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-20">
           {/* Text side */}
           <div className="hero-animate hero-delay-0 flex-1 text-center lg:text-left">
-            <div className="hero-animate hero-delay-0 inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-6">
+            {/* <div className="hero-animate hero-delay-0 inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-6">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-primary text-xs font-semibold tracking-wide">Non-custodial · No KYC · Lightning fast</span>
-            </div>
+            </div> */}
 
             <h1 className="hero-animate hero-delay-0 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-foreground leading-[1.08] mb-5">
               Buy <span className="text-primary">bitcoin</span> instantly

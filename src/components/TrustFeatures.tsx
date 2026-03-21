@@ -69,13 +69,13 @@ const TrustFeatures = () => {
         </div>
 
         {/* Trust bar */}
-        <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-2.5 text-white/30 text-xs font-medium">
+        {/* <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-2.5 text-white/30 text-xs font-medium">
           <span>⚡ Lightning Network</span>
           <span>🔑 Non-custodial</span>
           <span>🇰🇪 Built in Kenya</span>
           <span>₿ Bitcoin only</span>
           <span>🔒 No data stored</span>
-        </div>
+        </div> */}
 
       </div>
     </section>

@@ -38,8 +38,13 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
+    /* ── Satsoko brand palette ──────────────────────────────────────
+       Primary:    Bitcoin orange  hsl(33 93% 54%)  = #F7931A
+       Secondary:  Bronze          hsl(36 25% 22%)  = #463b2a
+       Canvas:     Warm beige      hsl(36 65% 96%)  = background
+    ─────────────────────────────────────────────────────────────── */
     --satsoko-orange: 33 93% 54%;
-    --satsoko-orange-glow: 33 93% 54%;
+    --satsoko-bronze: 36 25% 22%;
     --satsoko-dark: 36 15% 20%;
     --satsoko-green: 145 63% 42%;
 

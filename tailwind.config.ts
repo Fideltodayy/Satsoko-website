@@ -49,6 +49,7 @@ export default {
         },
         satsoko: {
           orange: "hsl(var(--satsoko-orange))",
+          bronze: "hsl(var(--satsoko-bronze))",
           dark: "hsl(var(--satsoko-dark))",
           green: "hsl(var(--satsoko-green))",
         },

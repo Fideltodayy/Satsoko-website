@@ -5,7 +5,7 @@ const Navbar = () => {
         <img
           src="/satsoko-logo.svg"
           alt="Satsoko"
-          className="h-16 md:h-20 w-auto object-contain"
+          className="h-9 md:h-11 w-auto object-contain"
         />
       </div>
       <div className="hidden md:flex items-center gap-8 xl:gap-12">

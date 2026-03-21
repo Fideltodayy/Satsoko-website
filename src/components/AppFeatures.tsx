@@ -250,10 +250,10 @@ const AppFeatures = () => {
     <section id="app-features" className="bg-background py-20 md:py-28">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-14">
-          <span className="text-primary font-semibold text-sm uppercase tracking-widest">
+          <span className="inline-flex items-center gap-2 bg-satsoko-bronze/10 text-satsoko-bronze border border-satsoko-bronze/20 rounded-full px-4 py-1 text-xs font-bold uppercase tracking-widest">
             App Exclusive
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mt-2">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mt-3">
             More power in the{" "}
             <span className="text-primary">app</span>
           </h2>
@@ -273,13 +273,13 @@ const AppFeatures = () => {
               >
                 {/* Text side */}
                 <div className="flex-1 text-center md:text-left">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 mx-auto md:mx-0">
-                    <feature.icon className="w-6 h-6 text-primary" />
+                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 mx-auto md:mx-0 ${i % 2 === 1 ? "bg-satsoko-bronze/12" : "bg-primary/10"}`}>
+                    <feature.icon className={`w-6 h-6 ${i % 2 === 1 ? "text-satsoko-bronze" : "text-primary"}`} />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
                     {feature.title}
                   </h3>
-                  <p className="text-primary font-semibold text-sm mt-1">
+                  <p className={`font-semibold text-sm mt-1 ${i % 2 === 1 ? "text-satsoko-bronze" : "text-primary"}`}>
                     {feature.subtitle}
                   </p>
                   <p className="text-muted-foreground mt-3 leading-relaxed max-w-sm mx-auto md:mx-0">

@@ -34,7 +34,7 @@ const INSTALL_OPTIONS = [
   { label: "Use Web App", Icon: () => <Globe className="w-[18px] h-[18px]" /> },
 ];
 
-const CTAButtons = () => {
+const CTAButtons = ({ className }: { className?: string }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -49,7 +49,7 @@ const CTAButtons = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center" ref={ref}>
+    <div className={`flex flex-col items-center lg:items-start ${className ?? ""}`} ref={ref}>
       <button
         onClick={() => setOpen(!open)}
         className="inline-flex items-center gap-3 px-8 h-[56px] rounded-full font-bold text-base transition-all hover:opacity-90 active:scale-95"
@@ -68,7 +68,7 @@ const CTAButtons = () => {
       >
         <div className="overflow-hidden">
           <div
-            className="mt-3 w-64 mx-auto rounded-3xl overflow-hidden shadow-2xl"
+            className="mt-3 w-64 rounded-3xl overflow-hidden shadow-2xl"
             style={{ background: "hsl(36 15% 14%)" }}
           >
             <div className="px-5 py-4 border-b border-white/10">
