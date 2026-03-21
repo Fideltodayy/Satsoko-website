@@ -4,107 +4,79 @@ import ScrollReveal from "@/components/ScrollReveal";
 const usps = [
   {
     Icon: ShieldCheck,
-    title: "Non-Custodial",
-    headline: "Your bitcoin, your keys",
-    description:
-      "We never hold your Bitcoin — not even for a second. Sats go straight from your M-Pesa to your own Lightning wallet. You remain in full control at all times.",
+    label: "Non-custodial",
+    sub: "Your keys, your bitcoin",
     accent: true,
   },
   {
     Icon: UserX,
-    title: "No KYC. No Sign-Up.",
-    headline: "Privacy by default",
-    description:
-      "No ID, no selfie, no account creation. Just enter an amount, your Lightning address, and your M-Pesa number. That's the entire process.",
+    label: "No KYC",
+    sub: "No sign-up ever",
     accent: false,
   },
   {
     Icon: Zap,
-    title: "Lightning Fast",
-    headline: "Under 2 minutes, always",
-    description:
-      "Powered by the Bitcoin Lightning Network — the fastest payment rail on earth. Confirm the STK push and sats land in your wallet in seconds.",
+    label: "Lightning fast",
+    sub: "Under 2 minutes",
     accent: false,
   },
   {
     Icon: ArrowRightLeft,
-    title: "No Middleman",
-    headline: "Straight from M-Pesa to Lightning",
-    description:
-      "No exchange account. No deposit. No withdrawal. Satsoko is a pure bridge — KES in, sats out. The money goes directly to you.",
+    label: "No middleman",
+    sub: "KES in, sats out",
     accent: false,
   },
 ];
 
 const TrustFeatures = () => {
   return (
-    <section className="bg-secondary py-20 md:py-28">
+    <section className="bg-secondary py-16 md:py-20">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-14">
+
+        {/* Headline */}
+        <div className="text-center mb-10">
           <span className="text-primary font-semibold text-sm uppercase tracking-widest">
             Why Satsoko
           </span>
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-tight text-white mt-2">
             Built on <span className="text-primary">trust</span>, not promises
           </h2>
-          <p className="text-white/60 mt-3 max-w-lg mx-auto leading-relaxed">
-            We don't hold your funds. We don't need your ID. We just bridge KES to bitcoin — fast and direct.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
-          {usps.map(({ Icon, title, headline, description, accent }, i) => (
-            <ScrollReveal key={title} delay={i * 100}>
+        {/* Feature strip */}
+        <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10 border border-white/10 rounded-3xl overflow-hidden">
+          {usps.map(({ Icon, label, sub, accent }, i) => (
+            <ScrollReveal key={label} delay={i * 80}>
               <div
-                className={`rounded-3xl p-7 h-full flex flex-col gap-4 border transition-all duration-300 hover:-translate-y-1 ${
-                  accent
-                    ? "bg-primary border-primary/0 text-primary-foreground"
-                    : "bg-white/5 border-white/10 text-white"
+                className={`flex flex-col items-center justify-center gap-3 px-6 py-10 text-center transition-colors duration-300 hover:bg-white/5 ${
+                  accent ? "bg-primary/15" : ""
                 }`}
               >
                 <div
-                  className={`w-11 h-11 rounded-2xl flex items-center justify-center ${
-                    accent ? "bg-white/20" : "bg-primary/15"
+                  className={`w-12 h-12 rounded-2xl flex items-center justify-center ${
+                    accent ? "bg-primary/25" : "bg-white/8"
                   }`}
                 >
-                  <Icon className={`w-5 h-5 ${accent ? "text-white" : "text-primary"}`} />
+                  <Icon className={`w-6 h-6 ${accent ? "text-primary" : "text-white/70"}`} />
                 </div>
                 <div>
-                  <span
-                    className={`text-xs font-bold uppercase tracking-widest ${
-                      accent ? "text-white/70" : "text-primary/80"
-                    }`}
-                  >
-                    {title}
-                  </span>
-                  <h3
-                    className={`font-bold text-lg mt-1 ${
-                      accent ? "text-white" : "text-white"
-                    }`}
-                  >
-                    {headline}
-                  </h3>
-                  <p
-                    className={`text-sm mt-2 leading-relaxed ${
-                      accent ? "text-white/80" : "text-white/55"
-                    }`}
-                  >
-                    {description}
-                  </p>
+                  <p className="font-bold text-white text-base">{label}</p>
+                  <p className="text-white/45 text-xs mt-0.5">{sub}</p>
                 </div>
               </div>
             </ScrollReveal>
           ))}
         </div>
 
-        {/* Bottom trust bar */}
-        <div className="mt-14 flex flex-wrap justify-center gap-x-10 gap-y-3 text-white/40 text-sm font-medium">
+        {/* Trust bar */}
+        <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-2.5 text-white/30 text-xs font-medium">
           <span>⚡ Lightning Network</span>
           <span>🔑 Non-custodial</span>
           <span>🇰🇪 Built in Kenya</span>
           <span>₿ Bitcoin only</span>
           <span>🔒 No data stored</span>
         </div>
+
       </div>
     </section>
   );

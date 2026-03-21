@@ -22,9 +22,10 @@ const Index = () => {
         {/* Animated gradient background */}
         <div className="absolute inset-0 hero-gradient-bg" />
 
-        {/* Decorative orange orbs */}
-        <div className="absolute top-[-80px] right-[-80px] w-[400px] h-[400px] rounded-full bg-primary/10 blur-[120px] orange-pulse pointer-events-none" />
-        <div className="absolute bottom-[-60px] left-[-60px] w-[300px] h-[300px] rounded-full bg-primary/8 blur-[100px] orange-pulse pointer-events-none" style={{ animationDelay: '3s' }} />
+        {/* Floating ambient orbs */}
+        <div className="absolute top-[-60px] right-[-60px] w-[500px] h-[500px] rounded-full bg-primary/12 blur-[130px] orb-1 pointer-events-none" />
+        <div className="absolute bottom-[-80px] left-[-80px] w-[380px] h-[380px] rounded-full bg-primary/10 blur-[110px] orb-2 pointer-events-none" />
+        <div className="absolute top-[40%] left-[30%] w-[280px] h-[280px] rounded-full bg-amber-300/8 blur-[90px] orb-3 pointer-events-none" />
 
         {/* Background video slot — drop your .mp4 here for a lively hero */}
         {/*

@@ -120,22 +120,47 @@ All colors MUST be HSL.
 
 /* Animated hero background gradient */
 @keyframes hero-gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%   { background-position: 0% 30%; }
+  33%  { background-position: 100% 60%; }
+  66%  { background-position: 50% 100%; }
+  100% { background-position: 0% 30%; }
 }
 
 .hero-gradient-bg {
-  background: linear-gradient(
-    135deg,
-    hsl(36 65% 96%) 0%,
-    hsl(33 80% 93%) 25%,
-    hsl(36 60% 95%) 50%,
-    hsl(33 70% 91%) 75%,
-    hsl(36 55% 96%) 100%
-  );
-  background-size: 300% 300%;
-  animation: hero-gradient-shift 14s ease infinite;
+  background: radial-gradient(ellipse at 20% 50%, hsl(33 90% 91%) 0%, transparent 55%),
+              radial-gradient(ellipse at 80% 20%, hsl(36 75% 93%) 0%, transparent 50%),
+              radial-gradient(ellipse at 60% 80%, hsl(33 80% 89%) 0%, transparent 55%),
+              hsl(36 65% 96%);
+  background-size: 200% 200%;
+  animation: hero-gradient-shift 18s ease-in-out infinite;
 }
+
+/* Floating orb animations — each at a different path/speed */
+@keyframes orb-float-1 {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  25%  { transform: translate(40px, -30px) scale(1.06); }
+  50%  { transform: translate(20px, -60px) scale(0.96); }
+  75%  { transform: translate(-20px, -20px) scale(1.04); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes orb-float-2 {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  30%  { transform: translate(-50px, 30px) scale(1.08); }
+  60%  { transform: translate(20px, 60px) scale(0.94); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes orb-float-3 {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  40%  { transform: translate(30px, 50px) scale(1.1); }
+  70%  { transform: translate(-40px, 20px) scale(0.92); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.orb-1 { animation: orb-float-1 16s ease-in-out infinite; }
+.orb-2 { animation: orb-float-2 22s ease-in-out infinite; }
+.orb-3 { animation: orb-float-3 19s ease-in-out infinite; }
 
 /* Orange glow pulse for decorative elements */
 @keyframes orange-pulse {
