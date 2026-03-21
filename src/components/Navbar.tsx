@@ -3,9 +3,9 @@ const Navbar = () => {
     <nav className="w-full py-3 px-6 md:px-10 xl:px-16 flex items-center justify-between max-w-[1600px] mx-auto">
       <div className="flex items-center gap-2">
         <img
-          src="/icons/satsoko.png"
+          src="/satsoko-logo.svg"
           alt="Satsoko"
-          className="h-20 md:h-24 w-auto object-contain"
+          className="h-16 md:h-20 w-auto object-contain"
         />
       </div>
       <div className="hidden md:flex items-center gap-8 xl:gap-12">

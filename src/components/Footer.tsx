@@ -12,9 +12,9 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/icons/satsoko.png"
+                src="/satsoko-logo.svg"
                 alt="Satsoko"
-                className="h-16 w-auto object-contain"
+                className="h-14 w-auto object-contain brightness-0 invert"
               />
             </div>
             <p className="text-sm leading-relaxed max-w-xs">

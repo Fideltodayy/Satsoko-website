@@ -63,9 +63,9 @@ const PhoneMockup = () => {
                 {/* Logo */}
                 <div className="flex items-center gap-1.5 justify-center">
                   <img
-                    src="/icons/satsoko.png"
+                    src="/satsoko-logo.svg"
                     alt="Satsoko"
-                    className="h-7 w-auto object-contain"
+                    className="h-6 w-auto object-contain"
                   />
                 </div>
 
