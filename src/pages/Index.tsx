@@ -15,11 +15,10 @@ import TrustFeatures from "@/components/TrustFeatures";
 const Index = () => {
   return (
     <div className="bg-background">
-      <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        {/* Animated gradient background */}
+      {/* Hero Section — starts at the very top, Navbar lives inside so gradient covers it */}
+      <section className="relative overflow-hidden min-h-screen">
+        {/* Animated gradient background — full viewport from top */}
         <div className="absolute inset-0 hero-gradient-bg" />
 
         {/* Floating ambient orbs */}
@@ -27,7 +26,7 @@ const Index = () => {
         <div className="absolute bottom-[-80px] left-[-80px] w-[380px] h-[380px] rounded-full bg-primary/10 blur-[110px] orb-2 pointer-events-none" />
         <div className="absolute top-[40%] left-[30%] w-[280px] h-[280px] rounded-full bg-amber-300/8 blur-[90px] orb-3 pointer-events-none" />
 
-        {/* Background video slot — drop your .mp4 here for a lively hero */}
+        {/* Background video slot — drop your .mp4 here when ready */}
         {/*
         <video
           className="absolute inset-0 w-full h-full object-cover opacity-10"
@@ -37,7 +36,10 @@ const Index = () => {
         </video>
         */}
 
-        <div className="relative max-w-6xl mx-auto px-6 pt-16 md:pt-24 pb-16 lg:pb-0 lg:min-h-[90vh] flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-20">
+        {/* Navbar — inside hero so gradient starts behind it */}
+        <Navbar />
+
+        <div className="relative max-w-6xl mx-auto px-6 pt-8 md:pt-12 pb-16 lg:pb-0 lg:min-h-[calc(100vh-80px)] flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-20">
           {/* Text side */}
           <div className="hero-animate hero-delay-0 flex-1 text-center lg:text-left">
             {/* <div className="hero-animate hero-delay-0 inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-6">
