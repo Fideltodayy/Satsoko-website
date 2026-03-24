@@ -17,6 +17,9 @@ const isLightningInvoice = (v: string) =>
 const isLightningAddress = (v: string) =>
   /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
 
+const isLnurl = (v: string) =>
+  v.trim().toLowerCase().startsWith("lnurl1");
+
 /* ── Step indicator ───────────────────────────────────────────── */
 const StepBadge = ({
   num,
@@ -108,7 +111,7 @@ const StepPanel = ({
   );
 };
 
-/* ── Step 1: Lightning address / invoice ─────────────────────── */
+/* ── Step 1: Lightning address / invoice / LNURL ─────────────── */
 const Step1 = ({
   value,
   onChange,
@@ -120,12 +123,13 @@ const Step1 = ({
 }) => {
   const isInvoice = isLightningInvoice(value);
   const isAddress = isLightningAddress(value);
-  const isValid = isInvoice || isAddress;
+  const isLnurlValue = isLnurl(value);
+  const isValid = isInvoice || isAddress || isLnurlValue;
 
   return (
     <div className="space-y-3">
       <label className="text-[11px] font-semibold text-foreground/50 uppercase tracking-wider">
-        Paste Lightning address or invoice
+        Paste Lightning address, LNURL, or invoice (BOLT 11) 
       </label>
 
       <div
@@ -142,7 +146,7 @@ const Step1 = ({
         />
         <input
           className="flex-1 bg-transparent text-sm font-medium text-foreground outline-none placeholder:text-foreground/30"
-          placeholder="satoshi@blink.sv or lnbc…"
+          placeholder="satoshi@blink.sv · lnbc… · lnurl1…"
           value={value}
           onChange={(e) => onChange(e.target.value)}
           autoComplete="off"
@@ -164,10 +168,16 @@ const Step1 = ({
           Valid Lightning address
         </div>
       )}
+      {isLnurlValue && (
+        <div className="flex items-center gap-1.5 text-[11px] text-satsoko-green font-semibold">
+          <Zap className="w-3 h-3" />
+          Valid LNURL — enter KES amount below
+        </div>
+      )}
       {value.length > 5 && !isValid && (
         <div className="flex items-center gap-1.5 text-[11px] text-destructive font-semibold">
           <AlertCircle className="w-3 h-3" />
-          Not a valid Lightning address or invoice
+          Not a valid Lightning address, LNURL, or invoice (BOLT 11)
         </div>
       )}
 
@@ -430,11 +440,13 @@ const HomeScreen = ({ onSuccess }: { onSuccess: (data: TxData) => void }) => {
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // If invoice, pre-fill amount (simulate decoding)
+  // If BOLT11 invoice, pre-fill amount (simulate decoding). LNURL and address require user input.
   const handleAddressChange = (v: string) => {
     setAddress(v);
     if (isLightningInvoice(v)) {
       setAmount("1000"); // simulated decoded amount
+    } else if (!isLightningInvoice(v)) {
+      setAmount("");
     }
   };
 
@@ -471,7 +483,7 @@ const HomeScreen = ({ onSuccess }: { onSuccess: (data: TxData) => void }) => {
       </div>
 
       <div className="space-y-3">
-        <StepPanel num={1} title="Paste Lightning address or invoice" activeStep={step}>
+        <StepPanel num={1} title="Lightning address, invoice or LNURL" activeStep={step}>
           <Step1
             value={address}
             onChange={handleAddressChange}
