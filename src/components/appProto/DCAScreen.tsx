@@ -46,7 +46,7 @@ const DCAScreen = () => {
     }, 900);
   };
 
-  const methodColor = (m: string) => (m === "mpesa" ? "#00A651" : "#E20017");
+  const methodColor = (m: string) => m === "mpesa" ? "hsl(33 93% 54%)" : "hsl(36 25% 22%)";
 
   return (
     <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
@@ -55,7 +55,7 @@ const DCAScreen = () => {
         <div>
           <h2 className="text-base font-extrabold text-foreground">Recurring buys</h2>
           <p className="text-[11px] text-foreground/40 mt-0.5">
-            Dollar-cost average automatically
+            Dollar-Cost Average- stack sats on autopilot!
           </p>
         </div>
         <button
@@ -96,7 +96,7 @@ const DCAScreen = () => {
             </label>
             <div
               className="mt-1 flex items-center border rounded-xl px-3 py-2.5"
-              style={{ borderColor: "hsl(36 30% 88%)", background: "white" }}
+              style={{ borderColor: "hsl(36 30% 88%)", background: "hsl(36 55% 98%)" }}
             >
               <span className="text-sm font-bold text-foreground/30 mr-2">KES</span>
               <input
@@ -127,7 +127,7 @@ const DCAScreen = () => {
                   className="flex-1 py-2 rounded-xl border text-xs font-bold transition-all"
                   style={{
                     borderColor: freq === f ? "hsl(33 93% 54%)" : "hsl(36 30% 88%)",
-                    background: freq === f ? "hsl(33 93% 54% / 0.1)" : "white",
+                    background: freq === f ? "hsl(33 93% 54% / 0.1)" : "hsl(36 55% 98%)",
                     color: freq === f ? "hsl(33 93% 54%)" : "hsl(36 20% 12% / 0.5)",
                   }}
                 >
@@ -174,7 +174,7 @@ const DCAScreen = () => {
                   className="py-2 rounded-xl text-xs font-bold border transition-all"
                   style={{
                     borderColor: time === t ? "hsl(33 93% 54%)" : "hsl(36 30% 88%)",
-                    background: time === t ? "hsl(33 93% 54% / 0.1)" : "white",
+                    background: time === t ? "hsl(33 93% 54% / 0.1)" : "hsl(36 55% 98%)",
                     color: time === t ? "hsl(33 93% 54%)" : "hsl(36 20% 12% / 0.5)",
                   }}
                 >
@@ -191,8 +191,8 @@ const DCAScreen = () => {
             </label>
             <div className="mt-1 grid grid-cols-2 gap-2">
               {([
-                { id: "mpesa" as const, label: "M-Pesa", color: "#00A651", bg: "#E8F5E9" },
-                { id: "airtel" as const, label: "Airtel Money", color: "#E20017", bg: "#FFEBEE" },
+                { id: "mpesa" as const, label: "M-Pesa", color: "hsl(33 93% 54%)", bg: "hsl(33 93% 54% / 0.08)" },
+                { id: "airtel" as const, label: "Airtel Money", color: "hsl(36 25% 22%)", bg: "hsl(36 25% 22% / 0.08)" },
               ]).map(({ id, label, color, bg }) => (
                 <button
                   key={id}
@@ -200,7 +200,7 @@ const DCAScreen = () => {
                   className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl border-2 font-bold text-xs transition-all"
                   style={{
                     borderColor: method === id ? color : "hsl(36 30% 88%)",
-                    background: method === id ? bg : "white",
+                    background: method === id ? bg : "hsl(36 55% 98%)",
                     color: method === id ? color : "hsl(36 20% 12% / 0.5)",
                   }}
                 >
